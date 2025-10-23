@@ -98,6 +98,10 @@ print(f"Grafo trasporti autobus Bologna: nodi = {G.number_of_nodes()} , archi = 
 print("Esempio arco:", list(G.edges(data=True))[:5])
 
 #Salvataggio grafo
+nx.write_gexf(G, "network_bologna.gexf")
+print("File GEXF salvato come 'network_bologna.gexf'")
+
+
 with open("network_bologna.gpickle", "wb") as f:
     pickle.dump(G, f)
 print("Grafo salvato correttamente in 'network_bologna.gpickle'")
